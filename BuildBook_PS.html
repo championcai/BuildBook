@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>Build Book</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/glyphicons.css" rel="stylesheet">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+
+</head>
+
+
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+
+       <h1>Build Book</h1>
+
+
+                        <form class="form-horizontal m-t" id="commentForm">
+                                          <div>
+
+                                    <button type="button" class="btn btn-primary" onclick='Grids[0].ControlPanel.Click(1);'>上传保存</button>
+                                    <button type="button" class="btn btn-primary" onclick='dispCKeditor();' data-toggle="modal" data-target="#myModal4" >详细描述</button>
+                                    <button type="button" class="btn btn-primary" onclick='Grids[0].ControlPanel.Click(3);'>插入</button>
+                                    <button type="button" class="btn btn-primary" onclick='L删除();'>删除</button>
+                                    <button type="button" class="btn btn-primary" onclick='L不删除();'>取消删除</button>
+                                   <button class="btn btn-primary" id="l展开" onclick='Grids[0].ControlPanel.Click(8);' type="button">展开</button>
+                                    <button class="btn btn-primary" id="l收缩" onclick='Grids[0].ControlPanel.Click(9);' type="button">收缩</button>
+                                    <button class="btn btn-primary" id="l选列" onclick='Grids[0].ControlPanel.Click(14);' type="button">选列</button>
+
+                                    </div>
+                              <div style=' height:400px;'>
+                                     <div id='GRID'>
+                                             <bdo Debug='0'
+                                              Layout_Url="BuildBook_List.xml"
+
+                                             Data_Url="BuildBook_List.aspx"
+                                             Upload_Url="BuildBook_List.aspx" Upload_Method="Form" Upload_Data="TGData" Upload_Format="Internal"
+                                             ></bdo>
+                                     </div>
+                                  </div>
+                           <!--      <div class="Main" id="GRID" style="height:600px"></div>  -->
+                        </form>
+
+    </div>
+
+    <script type="text/javascript" src="../../Grid/GridE.js"> </script>
+    <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../../js/viewer.min.js"></script>
+    <script type="text/javascript" src="../../js/embed2.js"></script>
+
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/demo/bootstrap-table-demo.min.js"></script>
+
+    <script>
+  function dispCKeditor()
+        {
+           var G = Grids[0];
+   document.getElementById("详细描述").innerHTML=G.GetString(ROW,"CCode")+G.GetString(ROW,"CName");
+             EDITOR.setData(G.GetString(ROW,"CDescription"));
+        }
+        function saveCKeditor()
+        {
+           var G = Grids[0];
+           G.SetString(ROW,"CDescription",EDITOR.getData(),true);
+        //    G.Refresh();
+       }
+
+    function L删除()
+    {
+  	  var G = Grids[0];
+      G.SetString(ROW,"CMark","D",true);
+    }
+    function L不删除()
+    {
+  	  var G = Grids[0];
+      G.SetString(ROW,"CMark","A",true);
+    }
+  </script>
+</body>
+</html>

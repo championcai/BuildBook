@@ -1,0 +1,140 @@
+﻿<Grid>
+   <Cfg id='BuildBook_List'
+      Tag='GRID'
+      Style="ExtJs"
+      IdNames='COwner,Def,Ident' IdChars='0123456789'
+      MainCol='CName'
+      Sort='CCode'
+      Selecting='0'
+      SelectingSingle='1'
+      Undo='1'
+      Dragging='0'
+      Paging="2" PageLength="10" MaxPages="20"
+      ConstHeight='1'
+      MaxWidth='1'
+      CanExpaned='1'
+      ResizingMain='3'
+   />
+
+   <LeftCols>
+       <C Name='CCode' Width='80' Type='Text' CanGroup='0'/>
+       <C Name='CName' Width='100' Type='Text' CanGroup='1'/>
+   </LeftCols>
+
+   <Cols>
+       <C Name='CNameEN'       Width='100' Type='Text'   CanEdit='1'/>
+       <C Name='C属性1'        Width='60' Type='Text'/>
+       <C Name='CType'         Width='100' Type='Enum' Enum="|试制|翻新|工作单"  CanEdit='1'/>
+       <!--<C Name='C属性2'        Width='60' Type='Text'/>-->
+       <C Name='C属性3'        Width='100' Type='Text'/>
+       <C Name='C属性4'        Width='120' Type='Link' <a href=BuildBook_Info.html> />
+       <C Name='CStatus'       Width='80' Type='Enum' Enum="|已上传|操作中|审核中"/>
+       <C Name='COwner'        Width='80' Type='Text'/>
+       <C Name='C属性5'        Width='80' Type='Text'/>
+       <C Name='C属性6'        Width='80' Type='Enum' Enum="|有|无"/>
+       <!--<C Name='C属性7'        Width='100' Type='Text'/>
+       <C Name='C属性8'        Width='80' Type='Enum' Enum="||零件装不上 |零件严重干涉 |装配问题 |零件质量问题 |零件损坏 |缺零件 |零件号不对 |其他"  CanEdit='1'/>
+       <C Name='CDescription'  Width='150' Type='Html'  CanEdit='0'/>
+       <C Name='C属性9'        Width='70' Type='Enum' Enum="|OK|NOK"/>
+       <C Name='CComments'     Width='150' Type='Text'/>
+       <C Name='CHistory'      Width='100' Type='Text' CanEdit='0'/>-->
+        <C Name='CDepartment'   Width='80' Type='Enum' Enum="|请选择部门...|设计部|前期车辆开发与整车集成部|车身外饰部|内饰部|空调电子部|底盘工程及驱动系统集成部|驱动系统部|售后工程部|试验认证部|项目管理部|产品数据及知识工程部|工程质量部|产品价值分析与管理部|运营及工程规划部" EmptyValue=""/>
+       <C Name='CAt'           Width='70' Type='Text' CanEdit='0' CanGroup='0'/>
+       <C Name='CMark'         Width='20' CanEdit='0' CanGroup='0'/>
+  </Cols>
+
+    <Panel Visible='0'/>
+
+
+   <Def>
+      <D Name='R' Height='25' MaxHeight='25' D='2' />
+   </Def>
+
+  <Header SortIcons='2'
+      CCode='编号'
+      CName='项目名称'
+      CNameEN='整车平台'
+      CType='业务类型'
+      CDescription='特殊要求'
+      CComments='备注'
+      CHistory='更改历史'
+      COwner='责任人'
+      CDepartment='责任部门'
+      CStatus='完成状态'
+      CAt='修改时间'
+      CMark='删除标志'
+
+      C属性1='机型'
+      C属性2='用途'
+      C属性3='阶段'
+      C属性4='样机编号'
+      C属性5='执行人'
+      C属性6='BSD'
+      C属性7='BSD编号'
+      C属性8='BSD问题类型'
+      C属性9='特殊要求状态'
+
+      MenuName='Header'
+      id='组合ID'
+   >
+   </Header>
+
+   <Head>
+      <Filter
+         CCodeCanEdit='0' CCodeShowMenu='0' CCodeButton='Defaults' CCodeDefaults='|*FilterOff|*RowsSibling' CCodeRange='1'
+         CNameCanEdit='0' CNameShowMenu='0' CNameButton='Defaults' CNameDefaults='|*FilterOff|*RowsSibling' CNameRange='1'
+         CNameENCanEdit='0' CNameENShowMenu='0' CNameENButton='Defaults' CNameENDefaults='|*FilterOff|*RowsSibling' CNameENRange='1'
+         CTypeCanEdit='0' CTypeShowMenu='0' CTypeButton='Defaults' CTypeDefaults='|*FilterOff|*RowsSibling' CTypeRange='1'
+         C属性1CanEdit='0' C属性1ShowMenu='0' C属性1Button='Defaults' C属性1Defaults='|*FilterOff|*RowsSibling' C属性1Range='1'
+         C属性2CanEdit='0' C属性2ShowMenu='0' C属性2Button='Defaults' C属性2Defaults='|*FilterOff|*RowsSibling' C属性2Range='1'
+         C属性3CanEdit='0' C属性3ShowMenu='0' C属性3Button='Defaults' C属性3Defaults='|*FilterOff|*RowsSibling' C属性3Range='1'
+         C属性4CanEdit='0' C属性4ShowMenu='0' C属性4Button='Defaults' C属性4Defaults='|*FilterOff|*RowsSibling' C属性4Range='1'
+         C属性5CanEdit='0' C属性5ShowMenu='0' C属性5Button='Defaults' C属性5Defaults='|*FilterOff|*RowsSibling' C属性5Range='1'
+         C属性6CanEdit='0' C属性6ShowMenu='0' C属性6Button='Defaults' C属性6Defaults='|*FilterOff|*RowsSibling' C属性6Range='1'
+         C属性7CanEdit='0' C属性7ShowMenu='0' C属性7Button='Defaults' C属性7Defaults='|*FilterOff|*RowsSibling' C属性7Range='1'
+         C属性8CanEdit='0' C属性8ShowMenu='0' C属性8Button='Defaults' C属性8Defaults='|*FilterOff|*RowsSibling' C属性8Range='1'
+         C属性9CanEdit='0' C属性9ShowMenu='0' C属性9Button='Defaults' C属性9Defaults='|*FilterOff|*RowsSibling' C属性9Range='1'
+         CDescriptionCanEdit='0' CDescriptionShowMenu='0' CDescriptionButton='Defaults' CDescriptionDefaults='|*FilterOff|*RowsSibling' CDescriptionRange='1'
+         CCommentsCanEdit='0' CCommentsShowMenu='0' CCommentsButton='Defaults' CCommentsDefaults='|*FilterOff|*RowsSibling' CCommentsRange='1'
+         CHistoryCanEdit='0' CHistoryShowMenu='0' CHistoryButton='Defaults' CHistoryDefaults='|*FilterOff|*RowsSibling' CHistoryRange='1'
+         COwnerCanEdit='0' COwnerShowMenu='0' COwnerButton='Defaults' COwnerDefaults='|*FilterOff|*RowsSibling' COwnerRange='1'
+         CDepartmentCanEdit='0' CDepartmentShowMenu='0' CDepartmentButton='Defaults' CDepartmentDefaults='|*FilterOff|*RowsSibling' CDepartmentRange='1'
+         CStatusCanEdit='0' CStatusShowMenu='0' CStatusButton='Defaults' CStatusDefaults='|*FilterOff|*RowsSibling' CStatusRange='1'
+         CAtCanEdit='0' CAtShowMenu='0' CAtButton='Defaults' CAtDefaults='|*FilterOff|*RowsSibling' CAtRange='1'
+      />
+   </Head>
+
+   <Solid>
+
+      <Group Space='0' Panel='1' id='Group' CanFocus='0' Cells='List,Custom,Month,Cust,Rev' NoUpload="0"
+
+         LISTLeft='5'
+         List='|Group by &lt;span style="color:green;">none&lt;/span>
+               |Group by &lt;span style="color:blue;">数据来源&lt;/span>
+               |Group by &lt;span style="color:blue;">部门&lt;/span>
+               |Group by &lt;span style="color:blue;">分类标签&lt;/span>
+               |Group by &lt;span style="color:blue;">Status&lt;/span>
+         '
+         ListWidth='200'
+         Cols='||C属性1|C属性2|C属性3|C属性4|C属性5|C属性6|C属性7|C属性8|C属性9|CType|CStatus'
+         Custom='1'
+
+         RevLeft='5' RevType="Bool" RevLabelRight="反向树" RevCanEdit="1" RevFormula="Grid.ReversedTree?1:0" RevOnChange="Grid.SetReversedTree(Value);"
+      ></Group>
+
+      <Search Space='0' Panel='1' id='Search' CanFocus='0' NoUpload="0"
+         Cells='Defs,Case,Type,Expression,Filter,Select,Mark,Find,Clear,Help'
+         ExpressionAction='Last' ExpressionNoColor='0' ExpressionCanFocus='1' ExpressionLeft='5' ExpressionMinWidth='50'
+         ExpressionEmptyValue ='&lt;i style="color:#AAAAAA">关键字&lt;/i>'
+
+         DefsLabel='搜索范围：'
+         DefsDefaults='||编号|名称|英文名称|分类标签|详细描述|部门|分部|科室|股|姓名|工号|十二化|更改说明|更改历史|责任编辑|责任部门|时间|状态'
+
+      ></Search>
+
+      <I id="PAGER" Visible="1" Cells="NAV,LIST" Space="4" NAVType="Pager" LISTType="Pages" LISTRelWidth="1" LISTAlign="left"	LISTLeft="10" />
+   </Solid>
+
+    <Toolbar Cells="Formula" Styles="2" Formula="'Rows: &lt;b>'+count('Row.Def.Name==&quot;R&quot;',4)+'&lt;/b>, Num sum:&lt;b>'+sum('N')+'&lt;/b>'" FormulaLeft="5"/>
+
+</Grid>
